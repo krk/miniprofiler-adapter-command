@@ -44,7 +44,7 @@ namespace ConsoleApplication35
 				// Somehow a profiled command ends up in adapter.SelectCommand
 				var command = factory.CreateCommand();
 
-				/* Even though type of SelectCommand is DbCommand, an SqlDataAdap
+				/* Even though type of SelectCommand is DbCommand, an SqlDataAdapter expects a SqlCommand instead of a DbCommand, voiding Liskov Substitution Principle.
 				 * An unhandled exception of type 'System.InvalidCastException' occurred in System.Data.dll
 				 * Additional information: Unable to cast object of type 'StackExchange.Profiling.Data.ProfiledDbCommand' to type 'System.Data.SqlClient.SqlCommand'.
 				 */
